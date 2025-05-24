@@ -3,7 +3,7 @@
 build_resource_pack.py
 ──────────────────────
 1. Copies lang.json → assets/minecraft/lang/<lang>.json          (128 files)
-2. Creates / overwrites build/HauntedMCThemeRP.zip containing:
+2. Creates / overwrites build/HauntedMC-GlobalPack.zip containing:
        • assets/   (recursive)
        • pack.mcmeta
        • pack.png
@@ -46,7 +46,7 @@ TEMPLATE   = Path("lang.json")
 DEST_DIR   = Path("assets/minecraft/lang")
 
 BUILD_DIR  = Path("build")                       # <── new build folder
-ZIP_NAME   = BUILD_DIR / "HauntedMCThemeRP.zip"  # zip now lives here
+ZIP_NAME   = BUILD_DIR / "HauntedMC-GlobalPack.zip"  # zip now lives here
 
 PACK_META  = Path("pack.mcmeta")
 PACK_PNG   = Path("pack.png")
@@ -65,7 +65,7 @@ def sync_languages() -> None:
     print(f"📄  Wrote {len(LANG_CODES)} language files → {DEST_DIR}")
 
 def zip_resource_pack() -> None:
-    """Create / overwrite build/HauntedMCThemeRP.zip"""
+    """Create / overwrite build/HauntedMC-GlobalPack.zip"""
     for required in (PACK_META, PACK_PNG):
         if not required.is_file():
             sys.exit(f"Error: {required.name} not found in the current directory.")
