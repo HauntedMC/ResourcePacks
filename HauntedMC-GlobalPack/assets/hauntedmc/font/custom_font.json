@@ -3,8 +3,8 @@
         {
             "type": "bitmap",
             "file": "hauntedmc:escape_menu/logo.png",
-            "height": 120,
-            "ascent": 113,
+            "height": 75,
+            "ascent": 74,
             "chars": [
                 "\uEF00"
             ]
