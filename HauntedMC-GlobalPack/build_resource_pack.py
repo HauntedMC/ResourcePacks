@@ -8,6 +8,7 @@ build_resource_pack.py
        • pack.mcmeta
        • pack.png
 3. If --install <DIR> is supplied, also copies the ZIP into <DIR>.
+4. Calculates the SHA-1 hash of the generated ZIP, prints it, and writes it to build/HauntedMCThemeRP.zip.sha1
 
 Examples
 --------
@@ -21,6 +22,7 @@ import argparse
 import os
 import shutil
 import sys
+import hashlib  # Added for SHA-1 hashing
 
 # ---------------------------------------------------------------------------
 # Raw filenames (abbreviated in this comment for brevity)
@@ -91,6 +93,21 @@ def install_zip(target_dir: Path) -> None:
     shutil.copy2(ZIP_NAME, dest)
     print(f"📦  Installed {ZIP_NAME.name} → {dest}")
 
+def compute_sha1(file_path: Path) -> None:
+    """Compute SHA-1 of the given file, print it, and save to .sha1 file"""
+    sha1 = hashlib.sha1()
+    with file_path.open('rb') as f:
+        while True:
+            chunk = f.read(8192)
+            if not chunk:
+                break
+            sha1.update(chunk)
+    digest = sha1.hexdigest()
+    sha_file = file_path.with_suffix(file_path.suffix + '.sha1')
+    sha_file.write_text(digest)
+    print(f"🔒  SHA-1 ({file_path.name}) = {digest}")
+    print(f"📝  Wrote hash to {sha_file}")
+
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
@@ -110,6 +127,8 @@ def main() -> None:
     zip_resource_pack()
     if args.install:
         install_zip(args.install)
+    # New step: compute and store SHA-1 hash of the zip
+    compute_sha1(ZIP_NAME)
     print("✅  Done!")
 
 if __name__ == "__main__":
