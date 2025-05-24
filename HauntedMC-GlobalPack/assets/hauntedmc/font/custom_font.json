@@ -1,0 +1,13 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "hauntedmc:escape_menu/logo.png",
+            "height": 120,
+            "ascent": 0,
+            "chars": [
+                "\uEF00"
+            ]
+        }
+    ]
+}
