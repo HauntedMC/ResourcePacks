@@ -1,4 +1,10 @@
 {
-    "menu.game": "\uEF00",
-    "menu.returnToGame": "Back to HauntedMC"
+    "menu.game": "󼰒󼰀󼰓",
+    "connect.joining": "",
+    "multiplayer.downloadingTerrain": "",
+    "menu.returnToGame": "Return to HauntedMC",
+    "gui.advancements": "Your Progress",
+    "gui.stats": "Statistics",
+    "menu.options": "Settings",
+    "menu.disconnect": "Leave HauntedMC"
 }

@@ -1,8 +1,10 @@
 {
     "providers": [
-        {
-            "type": "reference",
-            "id": "hauntedmc:custom_font"
-        }
+        { "type": "bitmap", "file": "minecraft:gui/negative_space.png", "height": -3, "ascent": -9999, "chars": [ "󼰀" ] },
+        { "type": "bitmap", "file": "minecraft:gui/negative_space.png", "height": -50, "ascent": -9999, "chars": [ "󼰁" ] },
+        { "type": "bitmap", "file": "minecraft:gui/negative_space.png", "height": -259, "ascent": -9999, "chars": [ "󼰂" ] },
+        { "type": "bitmap", "file": "minecraft:gui/negative_space.png", "height": -211, "ascent": -9999, "chars": [ "󼰃" ] },
+        { "type": "bitmap", "file": "minecraft:font/whitespace.png", "height": 8, "ascent":  7, "chars":  [ "󼰐"]},
+        { "type": "bitmap", "file": "minecraft:gui/pause_screen_title.png", "height": 256, "ascent": 49, "chars": [ "󼰒󼰓" ] }
     ]
 }
