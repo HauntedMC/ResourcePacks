@@ -1,7 +1,7 @@
 {
   "pack": {
-    "pack_format": 34,
-    "description": "HauntedMC - Global Pack"
+    "description": "HauntedMC Resource Pack",
+    "min_format": [88, 0],
+    "max_format": 88
   }
 }
-
